@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="http://cdn.gxstar123.cn/gxhexo/fav.png">
-  <link rel="icon" href="http://cdn.gxstar123.cn/gxhexo/fav.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://pic.imgdb.cn/item/62ae03000947543129861b6a.jpg">
+  <link rel="icon" href="https://pic.imgdb.cn/item/62ae03000947543129861b6a.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -415,11 +415,23 @@
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://gxstar123.cn/2020/10/06/%E8%AE%B0%E5%BD%95%E8%A5%BF%E5%AE%89%E6%B8%B8%E8%AE%B0/'></div>
+  <div id="twikoo"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#SOHUCS', function() {
-      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
-        window.changyan.api.config({"appid":"cyuRWVFza","appkey":"prod_59c59ec88fce178337db42afc1ff9d72"})
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hello-cloudbase-7gqop3jsc9bb93af","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
       });
     });
   </script>
